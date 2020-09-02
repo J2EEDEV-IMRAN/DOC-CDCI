@@ -1,0 +1,16 @@
+Custom Mysql
+--------------
+(RF:https://medium.com/better-programming/customize-your-mysql-database-in-docker-723ffd59d8fb)
+
+1.To build custom docker image for Mysql -> docker build -t dockerimagemysqlcustome .
+
+2. To run custom docker container for Mysql -> docker run --name mysql-custome -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=testDb -e MYSQL_USER=sa -e MYSQL_PASSWORD=password -d dockerimagemysqlcustome:latest --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+
+Custome Phpmyadmin
+------------------
+
+1. To buildcustom docker image for phpmyadmin -> docker build -t dockerimagephpmyadmincustome .
+
+2. To run custome docker container for phpmyadmin and linking mysql -> 
+

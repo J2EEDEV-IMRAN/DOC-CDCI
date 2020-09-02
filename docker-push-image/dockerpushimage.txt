@@ -1,0 +1,8 @@
+Pushing image to docker hub
+----------------------------
+(RF: https://stackoverflow.com/questions/43858398/docker-push-error-denied-requested-access-to-the-resource-is-denied)
+
+1. Taging image before pushing -> sudo docker tag dockerimagephpmyadmincustome:latest javadeveloperimran/dockerimagephpmyadmincustome
+
+2, Pushing it to docker hub -> sudo docker push javadeveloperimran/dockerimagephpmyadmincustome
+

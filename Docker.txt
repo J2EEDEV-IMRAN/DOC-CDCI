@@ -1,0 +1,71 @@
+Docker commands:
+------------------
+1. To pull a docker image form docker hub -> docker pull openjdk
+
+2. If terminal shows access denied, then use this command -> chmod 777 /var/run/docker.sock
+
+3. To longin into docker -> docker login
+
+4. To remove a container ->docker container rm container_name
+   To remove an image -> docker image rm ID_
+
+5. To pull an image from docker hub to local image -> docker pull origin image_name
+
+6. To run a docker image -> docker run -it -d -p 8081:8081 javadeveloperimran/springboot-cdci-pipeline-jenkins
+
+7. To stop a container -> docker stop container_id
+
+8. Ip check -> ifconfig | grep "inet "
+
+9. Way to see container -> docker ps -a
+
+
+
+
+(SPRINGBOOT+MYSQL) -> https://www.youtube.com/watch?v=fvEWoy1xOvo
+
+Docker for Mysql
+------------------
+(RF : https://hub.docker.com/_/mysql)
+1. to pull mysql docker image -> docker pull mysql:latest
+
+2. to run mysql -> 3. running mysql with database -> docker run --name mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=tatabase -e MYSQL_USER=sa -e MYSQL_PASSWORD=password -d mysql:latest --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+Docker Phpmyadmin
+-------------------
+(RF:https://hub.docker.com/_/phpmyadmin)
+1. docker pull phpmyadmin:latest
+
+2. Used with linked server -> docker run -it  -d  --name myadmin --link mysql:db -p 8082:80  phpmyadmin (RF:https://medium.com/@migueldoctor/run-mysql-phpmyadmin-locally-in-3-steps-using-docker-74eb735fa1fc)
+
+
+Docker for Postgres
+--------------------
+(RF:https://hub.docker.com/_/postgres)
+
+1. TO pull postgres -> docker pull postgres
+
+2. To run postgres -> docker run --name postgres -e POSTGRES_USER=sa -e POSTGRES_PASSWORD=password -e POSTGRES_DB=testDb -d -p 5433:5432 postgres (RF:https://www.youtube.com/watch?v=vK3_bntpOQ0)
+
+
+
+Docker for Pgadmin
+------------------
+
+1. To pull Pgadmin -> docker pull dpage/pgadmin4 (RF: https://www.enterprisedb.com/edb-docs/d/pgadmin-4/reference/online-documentation/4.5/container_deployment.html)
+
+
+2. Run the pgadmin4 -> docker run -it -d -p 8083:80 -e PGADMIN_DEFAULT_EMAIL=explore247h@gmail.com -e PGADMIN_DEFAULT_PASSWORD=password -d dpage/pgadmin4 (RF:https://www.youtube.com/watch?v=vK3_bntpOQ0)
+
+
+Docker compost installation
+----------------------------
+sudo apt install docker-compose
+
+
+
+
+
+
+
+

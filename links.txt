@@ -12,4 +12,6 @@ https://geekflare.com/ansible-installation-ubuntu/
 
 
 
-
+Apache kafka
+--------------------
+https://www.youtube.com/watch?v=dq-ZACSt_gA

@@ -1,0 +1,28 @@
+Step 1 — Downloading and Extracting the Kafka Binaries
+------------------------------------------------------
+download from -> https://www.apache.org/dyn/closer.cgi?path=/kafka/2.6.0/kafka-2.6.0-src.tgz
+copy to opt directory ->sudo cp kafka-2.6.0-src.tgz /opt/
+unzip it through -> tar -xvzf kafka-2.6.0-src.tgz (rf :https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-ubuntu-18-04)
+
+
+Step 2 — Configuring the Kafka Server
+------------------------------------------
+(rf :https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-ubuntu-18-04)
+sudo nano /opt/kafka-2.6.0-src/config/server.properties -------------------> add this line to the file (delete.topic.enable = true)
+
+
+Step 3 —  Starting the Kafka and zookeeper Server
+--------------------------------------------------
+(RF LINK: )https://stackoverflow.com/questions/33098366/error-creating-kafka-topics-replication-factor-larger-than-available-brokers
+
+Kill process -> sudo fuser -k 2181/tcp
+run zookeeper -> /opt/kafka-2.6.0-src/bin/zookeeper-server-start.sh /opt/kafka-2.6.0-src/config/zookeeper.properties
+Run Kafka -> /opt/kafka-2.6.0-src/bin/kafka-server-start.sh /opt/kafka-2.6.0-src/config/server.properties
+
+Step 6 — Testing the Installation
+---------------------------------------------
+(RF LINK: https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-ubuntu-18-04)
+
+1. First, create a topic named TutorialTopic by typing -----------> /opt/kafka-2.6.0-src/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic TutorialTopic
+2. Publish the string "Hello, World" to the TutorialTopic topic by typing ---------> echo "Hello, World" | /opt/kafka-2.6.0-src/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic TutorialTopic > /dev/null
+3. The following command consumes messages from TutorialTopic. Note the use of the --from-beginning flag, which allows the consumption of messages that were published before the consumer was started ----------->    /opt/kafka-2.6.0-src/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic TutorialTopic --from-beginning

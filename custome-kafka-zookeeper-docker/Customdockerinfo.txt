@@ -1,0 +1,29 @@
+Custom Kafka
+--------------
+(RF:https://hub.docker.com/r/bitnami/kafka/)
+(RF:https://www.youtube.com/watch?v=WnlX7w4lHvM&t=145s)
+
+1.To build custom docker image for Kafka -> docker build -t dockerimagekafkacustome .
+
+Custome Phpmyadmin
+------------------
+
+1. To buildcustom docker image for zookeeper -> docker build -t dockerimagezookeepercustome .
+
+2. To run kafka and zookeeper i used docker-compose.yml file and to run used  ->  docker-compose up -d
+
+3.To move into docker kafka installation and start shall -> docker exec -it kafka /bin/sh
+
+4. change directory to /opt/kafka-version -> cd /opt/kafka_2.12-2.4.4 
+
+5. Run this command to start kafka and zookeeper ->./bin/kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic TutorialTopic (different from without docker)
+
+6. To see all topics -> ./bin/kafka-topics.sh --list --zookeeper zookeeper:2181
+
+To kill port
+---------------------
+sudo lsof -t -i:2181
+kill 8038
+
+
+
